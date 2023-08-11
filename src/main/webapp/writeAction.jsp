@@ -23,4 +23,7 @@
 %>
 <script>
 	location.href = "FcController?command=news";
+	
+	
+	
 </script>
