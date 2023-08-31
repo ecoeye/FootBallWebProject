@@ -39,11 +39,13 @@ public class QADetailAction implements Action {
 //		System.out.println("open111111111!!!!!!!!!!!!!!!!!!!!!!!!!!"+open1);
 		System.out.println(open);
 		int pageNum =0;
-		
+		String id = "";
 		try{
+			id = (String)session.getAttribute("id");
 			pageNum = Integer.parseInt(request.getParameter("page"));
 		}catch(Exception e){
 			pageNum = 1;
+			id = "";
 		}
 		
 		QaDao qadao = new QaDao();
@@ -54,7 +56,6 @@ public class QADetailAction implements Action {
 			e.printStackTrace();
 		}
 		
-		String id = (String)session.getAttribute("id");
 		String pw = (String)session.getAttribute("pw");
 		UserDAO udao = new UserDAO();
 		user.UserDTO udto = udao.loginDAO(id, pw);
@@ -87,6 +88,7 @@ public class QADetailAction implements Action {
 		request.setAttribute("goodsdto", goodsdto);
 		request.setAttribute("goodsdto2", goodsdto2);
 		request.setAttribute("goodsdto3", goodsdto3);
+		
 		if(open.equals("y")) {
 			request.setAttribute("qadto",qadto);
 			request.setAttribute("udto", udto);
