@@ -34,18 +34,17 @@ public class QADetailAction implements Action {
 		int bno = Integer.parseInt(request.getParameter("bno"));
 		String writer = request.getParameter("writer");
 		String open = (String)request.getParameter("open");
-//		String open1 = (String)request.getAttribute("open");
+
 		System.out.println("open123444555!!!!!!!!!!!!!!!!!!!!!!!!!!"+open);
-//		System.out.println("open111111111!!!!!!!!!!!!!!!!!!!!!!!!!!"+open1);
 		System.out.println(open);
 		int pageNum =0;
-		String id = "";
+		String id1 = "";
 		try{
-			id = (String)session.getAttribute("id");
+			id1 = (String)session.getAttribute("id");
 			pageNum = Integer.parseInt(request.getParameter("page"));
 		}catch(Exception e){
 			pageNum = 1;
-			id = "";
+			id1 = "";
 		}
 		
 		QaDao qadao = new QaDao();
@@ -58,7 +57,7 @@ public class QADetailAction implements Action {
 		
 		String pw = (String)session.getAttribute("pw");
 		UserDAO udao = new UserDAO();
-		user.UserDTO udto = udao.loginDAO(id, pw);
+		user.UserDTO udto = udao.loginDAO(id1, pw);
 		MainPhotoDao pdao= new MainPhotoDao();
 		ArrayList <MainPhotoDto> pdto = pdao.getPhotoimg();
 		MainNewsDao ndao = new MainNewsDao();
@@ -94,12 +93,12 @@ public class QADetailAction implements Action {
 			request.setAttribute("udto", udto);
 			RequestDispatcher rd = request.getRequestDispatcher("QaDetail.jsp");
 			rd.forward(request,response);
-		}else if(id.equals("operator")) {
+		}else if(id1.equals("operator")) {
 			request.setAttribute("qadto",qadto);
 			request.setAttribute("udto", udto);
 			RequestDispatcher rd = request.getRequestDispatcher("QaDetail.jsp");
 			rd.forward(request,response);
-		}else if(id.equals(writer)) {
+		}else if(id1.equals(writer)) {
 			request.setAttribute("qadto",qadto);
 			request.setAttribute("udto", udto);
 			RequestDispatcher rd = request.getRequestDispatcher("QaDetail.jsp");
