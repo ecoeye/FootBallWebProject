@@ -120,7 +120,6 @@
 						alert("로그인이 필요합니다.");
 						return false;
 					}
-// 					location.href="FcController?command=QAWriteForm";
 				});
 				<%-- $("tr").click(function() {
 					let bno = $(this).find(".bbno").text();

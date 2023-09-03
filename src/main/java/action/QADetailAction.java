@@ -35,7 +35,7 @@ public class QADetailAction implements Action {
 		String writer = request.getParameter("writer");
 		String open = (String)request.getParameter("open");
 
-		System.out.println("open123444555!!!!!!!!!!!!!!!!!!!!!!!!!!"+open);
+		System.out.println("open!!!!!!!!!!!!!!!!!!!!!!!!!!"+open);
 		System.out.println(open);
 		int pageNum =0;
 		String id1 = "";
@@ -109,7 +109,6 @@ public class QADetailAction implements Action {
 			request.setAttribute("udto", udto);
 			RequestDispatcher rd = request.getRequestDispatcher("FcController?command=QA");
 			rd.forward(request,response);
-
 		}
 		
 	}

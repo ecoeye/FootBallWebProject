@@ -19,6 +19,7 @@
 	QaDto qdto = (QaDto)request.getAttribute("qadto");
 	UserDTO usdto = (UserDTO)request.getAttribute("udto");
 	QaDao qdao = (QaDao)request.getAttribute("qdao");
+	
 	ArrayList<MainPhotoDto> pdto = (ArrayList<MainPhotoDto>)request.getAttribute("pdto");
 	ArrayList<MainNewsDto> ndto = (ArrayList<MainNewsDto>)request.getAttribute("ndto");
 	ArrayList<MainNoticeDto> ntdto = (ArrayList<MainNoticeDto>)request.getAttribute("ntdto");
@@ -29,6 +30,7 @@
 	ArrayList<GoodsDto> goodsbandto = (ArrayList<GoodsDto>)request.getAttribute("goodsdto");
 	ArrayList<GoodsDto> goodsbandto2 = (ArrayList<GoodsDto>)request.getAttribute("goodsdto2");
 	ArrayList<GoodsDto> goodsbandto3 = (ArrayList<GoodsDto>)request.getAttribute("goodsdto3");
+	
 	id = "";
 %>
 
@@ -62,9 +64,7 @@
            $(".slide3").bxSlider({
            	
            });
-//            $(".inner1").bxSlider({
               	
-//            });    
          });   
      
 		
