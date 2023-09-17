@@ -61,6 +61,7 @@ public class QAMainAction implements Action{
 			cnt = qDao.countqa();
 		}
 		
+		// 네비바
 		MainPhotoDao pdao= new MainPhotoDao();
 		ArrayList <MainPhotoDto> pdto = pdao.getPhotoimg();
 		MainNewsDao ndao = new MainNewsDao();
@@ -79,6 +80,7 @@ public class QAMainAction implements Action{
 		ArrayList<GoodsDto> goodsdto = mgdao.getbannergoods();
 		ArrayList<GoodsDto> goodsdto2 = mgdao.getbannergoods2();
 		ArrayList<GoodsDto> goodsdto3 = mgdao.getbannergoods3();
+		//네비바
 		
 		request.setAttribute("pdto", pdto);
 		request.setAttribute("ndto", ndto);
